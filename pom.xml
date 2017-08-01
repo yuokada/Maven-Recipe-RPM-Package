@@ -11,12 +11,29 @@
     <build>
         <plugins>
             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>2.4.3</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                        <configuration>
+                            <createSourcesJar>false</createSourcesJar>
+                            <shadeSourcesContent>true</shadeSourcesContent>
+                            <dependencyReducedPomLocation>${project.build.directory}/pom.xml</dependencyReducedPomLocation>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>rpm-maven-plugin</artifactId>
                 <version>2.1.5</version>
 
                 <executions>
-
                     <execution>
                         <goals>
                             <goal>rpm</goal>
@@ -25,7 +42,7 @@
                 </executions>
 
                 <configuration>
-                    <copyright>2010, NoBody</copyright>
+                    <copyright>2017, NoBody</copyright>
                     <group>Development</group>
                     <description>Maven Recipe: RPM Package.</description>
                     <license>MIT</license>
