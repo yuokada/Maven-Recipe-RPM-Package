@@ -19,3 +19,8 @@ Build: rpm2cpio ✔
 Required: berkeley-db ✔, libmagic ✔, popt ✔, libtasn1 ✔, gettext ✔, xz ✔, ossp-uuid ✔
 
 ```
+
+
+## MEMO
+
+- [RPM Maven Plugin – Maven RPM Plugin - Sample Configuration](http://www.mojohaus.org/rpm-maven-plugin/example1.html "RPM Maven Plugin – Maven RPM Plugin - Sample Configuration")
